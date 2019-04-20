@@ -1,5 +1,5 @@
 <div class="container">
   <div class="items">
-    <div *ngFor="let m of movies">{{m.name}}</div>
+    <div *ngFor="let m of movies | async">{{m.name}}</div>
   </div>
 </div>

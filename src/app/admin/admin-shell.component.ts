@@ -38,7 +38,12 @@ export class AdminShellComponent implements OnInit {
   }
 
   addMovie(): void {
+    console.log('adding a movie');
     this.movies.push(this.buildMovie());
+  }
+
+  save() {
+    console.log(this.movieForm);
   }
 
 }

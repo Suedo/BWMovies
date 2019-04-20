@@ -4,10 +4,12 @@ import { MovieListComponent } from './movies/movie-list/movie-list.component';
 import { MovieShellComponent } from './movies/movie-shell.component';
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
+import { AdminShellComponent } from './admin/admin-shell.component';
 
 const routes: Routes = [
 
   { path: 'movies', component: MovieShellComponent },
+  { path: 'admin', component: AdminShellComponent },
   { path: '', pathMatch: 'full', redirectTo: 'movies' }
 
 ];

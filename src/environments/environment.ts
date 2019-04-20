@@ -11,7 +11,8 @@ export const environment = {
     projectId: "fir-democrud-deac4",
     storageBucket: "fir-democrud-deac4.appspot.com",
     messagingSenderId: "724851088438"
-  }
+  },
+  getMovies: 'assets/data/movies.json'
 };
 
 /*

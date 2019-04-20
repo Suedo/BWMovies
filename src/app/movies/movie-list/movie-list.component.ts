@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from '../models/movie';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-movie-list',
@@ -8,11 +9,12 @@ import { Movie } from '../models/movie';
 })
 export class MovieListComponent implements OnInit {
 
-  movies: Movie[];
+  @Input() movies: Observable<Movie[]>;
 
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

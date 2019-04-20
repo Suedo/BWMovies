@@ -4,10 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminShellComponent } from './admin-shell.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
-
 import { MaterialModuleModule } from '../material-module/material-module.module';
-
 
 const routes: Routes = [
   { path: '', component: AdminShellComponent },

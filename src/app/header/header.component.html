@@ -1,26 +1,39 @@
 <div class="header-container">
   <!-- <div class="header-items"> -->
-    <div>
-      Birchwood Movies
-    </div>
-    <div>
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
+  <div>
+    <div>Birchwood Movies</div>
+    <button
+      mat-button
+      [routerLink]="['/movies']"
+      routerLinkActive="active-route"
+    >Movies</button>
+
+    <button
+      mat-button
+      [routerLink]="['/admin']"
+      routerLinkActive="active-route"
+    >Admin</button>
+
+  </div>
+
+  <div>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
       </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>dialpad</mat-icon>
-          <span>Redial</span>
-        </button>
-        <button mat-menu-item disabled>
-          <mat-icon>voicemail</mat-icon>
-          <span>Check voicemail</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>notifications_off</mat-icon>
-          <span>Disable alerts</span>
-        </button>
-      </mat-menu>
-    </div>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voicemail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+  </div>
   <!-- </div> -->
 </div>
