@@ -17,6 +17,8 @@ import { MaterialModuleModule } from './material-module/material-module.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { FooterComponent } from './footer/footer.component';
     LoginModule,
     AdminModule,
     BrowserAnimationsModule,
-    MaterialModuleModule
+    MaterialModuleModule,
+    HttpClientInMemoryWebApiModule
   ],
   providers: [],
   bootstrap: [AppComponent]

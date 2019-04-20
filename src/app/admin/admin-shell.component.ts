@@ -44,6 +44,8 @@ export class AdminShellComponent implements OnInit {
 
   save() {
     console.log(this.movieForm);
+    console.log('\n\n',this.movieForm.value); // what we want
+    this.movieForm.get('date');
   }
 
 }

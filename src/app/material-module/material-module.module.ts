@@ -24,7 +24,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 
 // https://github.com/angular/material2/issues/7898
-import {MatInputModule} from '@angular/material';
+import {MatInputModule, MatNativeDateModule} from '@angular/material';
 
 @NgModule({
   declarations: [],
@@ -47,7 +47,8 @@ import {MatInputModule} from '@angular/material';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    MatNativeDateModule
   ],
   exports: [
     MatFormFieldModule,
@@ -67,7 +68,8 @@ import {MatInputModule} from '@angular/material';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    MatNativeDateModule
   ]
 })
 export class MaterialModuleModule { }

@@ -3,16 +3,28 @@
 
 <form novalidate (ngSubmit)="save()" [formGroup]="movieForm">
 
-  <mat-form-field class="form-element">
-    <input matInput placeholder="Date of screening" formControlName="date">
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 
   <div formArrayName="movies" *ngFor="let movie of movies.controls; let i=index">
+    <div [formGroupName]="i" class="eachMovie">
 
-    <div [formGroupName]="i">
       <mat-form-field class="form-element">
         <mat-label attr.for="{{'movieId_' + i}}">Name of Movie</mat-label>
         <input matInput id="{{'movieId_' + i}}" placeholder="Interstellar" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field class="form-element">
+        <mat-label attr.for="{{'movieId_' + i}}">Genre</mat-label>
+        <input matInput id="{{'movieId_' + i}}" placeholder="Comedy" formControlName="genre">
+      </mat-form-field>
+
+      <mat-form-field class="form-element">
+        <mat-label attr.for="{{'movieId_' + i}}">Time</mat-label>
+        <input matInput id="{{'movieId_' + i}}" placeholder="Morning/Matinee/Evening" formControlName="time">
       </mat-form-field>
     </div>
   </div>

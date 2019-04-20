@@ -22,6 +22,14 @@ export class MovieService {
   }
 
   getMovies(): Observable<Movie[]>{
-    return this.http.get<Movie[]>(environment.getMovies);
+    return this.http.get<Movie[]>(environment.mem.getMovies);
+  }
+
+  addMovie(m: Movie) {
+
+  }
+
+  updateMovie() {
+
   }
 }

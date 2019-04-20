@@ -12,6 +12,10 @@ export const environment = {
     storageBucket: "fir-democrud-deac4.appspot.com",
     messagingSenderId: "724851088438"
   },
+  mem: {
+    getMovies: 'api/movies',
+    getBookings: 'api/bookings'
+  },
   getMovies: 'assets/data/movies.json'
 };
 
