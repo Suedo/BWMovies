@@ -1,6 +1,7 @@
 import { Movie } from './movie';
 
 export interface Screening {
-  date: string;
+  id: number;
+  date?: Date;
   movies: Movie[];
 }

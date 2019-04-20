@@ -37,9 +37,9 @@ export class InMemWebDb implements InMemoryDbService {
     ];
 
     const screening: Screening[] = [
-      { date: "21/4/2019", movies: [ { id: 10, name: 'Dhamaal', genre: 'Comedy', time: 'morning' } ] }
+      { id: 10, date: null , movies: [ { id: 10, name: 'Dhamaal', genre: 'Comedy', time: 'morning' } ] }
 
     ]
-    return { movies, bookings };
+    return { movies, bookings, screening };
   }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn, FormArray } from '@angular/forms';
+import { MovieService } from '../movies/movie.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +16,8 @@ export class AdminShellComponent implements OnInit {
     return this.movieForm.get('movies') as FormArray;
   }
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router: Router,
+    private movieService: MovieService) { }
 
   private validationMessages = {
     name: 'Please enter movie name.',
@@ -45,7 +48,19 @@ export class AdminShellComponent implements OnInit {
   save() {
     console.log(this.movieForm);
     console.log('\n\n',this.movieForm.value); // what we want
-    this.movieForm.get('date');
+
+    // add screening
+    this.movieService.addScreening(this.movieForm.value).subscribe(
+      () => this.onSaveComplete(),
+      (error: any) => console.error(error)
+    );
+
+  }
+
+  onSaveComplete(): void {
+    // Reset the form to clear the flags
+    this.movieForm.reset();
+    this.router.navigate(['/movies']);
   }
 
 }

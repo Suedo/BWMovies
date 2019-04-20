@@ -20,7 +20,7 @@ export class MovieShellComponent implements OnInit {
     this.movies = this.movieService.getMovies().pipe(
       mergeMap(movieArr => from(movieArr)), // stream([obj]) ==> stream(obj)
       tap(console.log),
-      take(5), // first 5 obj
+      // take(5), // first 5 obj
       toArray() // [obj0, obj1... obj4], needed for *ngFor iteration using async
     );
   }

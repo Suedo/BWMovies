@@ -13,8 +13,9 @@ export const environment = {
     messagingSenderId: "724851088438"
   },
   mem: {
-    getMovies: 'api/movies',
-    getBookings: 'api/bookings'
+    movies: 'api/movies',
+    bookings: 'api/bookings',
+    screening: 'api/screening'
   },
   getMovies: 'assets/data/movies.json'
 };
