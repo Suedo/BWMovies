@@ -18,7 +18,7 @@
       <mat-form-field class="form-element">
         <mat-label attr.for="{{'movieId_' + i}}">Name of Movie</mat-label>
         <input matInput id="{{'movieId_' + i}}" placeholder="Interstellar" formControlName="name">
-        <mat-error *ngIf="displayMessage[i] && displayMessage[i]['name']">
+        <mat-error *ngIf="displayMessage[i] && displayMessage[i]['name'].length > 0">
           {{ displayMessage[i]['name'] }}
         </mat-error>
       </mat-form-field>
@@ -31,7 +31,7 @@
       <mat-form-field class="form-element">
         <mat-label attr.for="{{'movieId_' + i}}">Time</mat-label>
         <input matInput id="{{'movieId_' + i}}" placeholder="Morning/Matinee/Evening" formControlName="time">
-        <mat-error *ngIf="displayMessage[i] && displayMessage[i]['time']">
+        <mat-error *ngIf="displayMessage[i] && displayMessage[i]['time'].length > 0">
           {{ displayMessage[i]['time'] }}
         </mat-error>
       </mat-form-field>
@@ -40,6 +40,8 @@
 
 
   <button mat-button (click)="addMovie()">Add Movie!</button>
+  <!-- courtesy @DeveloperShubo, either preventDefault(), or the below:  -->
+  <!-- <a href="javascript:void(0)" mat-button (click)="addMovie()">Add Movie!</a> -->
   <button mat-button type="submit" (click)="save()">Submit</button>
 
 </form>

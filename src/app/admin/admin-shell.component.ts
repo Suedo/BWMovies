@@ -19,7 +19,7 @@ export class AdminShellComponent implements OnInit, AfterViewInit {
 
   movieForm: FormGroup;
   genericValidator: GenericValidator;
-  validationMessages: MovieScreeningInputValidationMessages;
+  validationMessages: any;
   displayMessage: { [key: string]: string; } = {};
 
   get movies(): FormArray {
@@ -58,7 +58,7 @@ export class AdminShellComponent implements OnInit, AfterViewInit {
       debounceTime(500)
     ).subscribe(value => {
       this.displayMessage = this.genericValidator.processMessages(this.movieForm);
-      console.log(`DisplayMessage:\n${JSON.stringify(this.displayMessage)}`);
+      // console.log(`DisplayMessage:\n${JSON.stringify(this.displayMessage)}`);
       // console.log(this.displayMessage['date']);
 
 
@@ -67,13 +67,14 @@ export class AdminShellComponent implements OnInit, AfterViewInit {
 
   buildMovie(): FormGroup {
     return this.fb.group({
-      name: ['',  [Validators.required]],
+      name: ['',  Validators.required],
       genre: [''],
-      time: ['',  [Validators.required]],
+      time: ['',  Validators.required],
     });
   }
 
   addMovie(): void {
+    event.preventDefault();
     console.log('adding a movie');
     this.movies.push(this.buildMovie());
   }
