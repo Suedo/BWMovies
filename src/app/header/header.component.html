@@ -2,17 +2,16 @@
   <!-- <div class="header-items"> -->
   <div>
     <div>Birchwood Movies</div>
-    <button
-      mat-button
-      [routerLink]="['/movies']"
-      routerLinkActive="active-route"
-    >Movies</button>
+    <button mat-button [routerLink]="['/movies']" routerLinkActive="active-route">Movies</button>
 
-    <button
-      mat-button
-      [routerLink]="['/admin']"
-      routerLinkActive="active-route"
-    >Admin</button>
+    <button mat-button [routerLink]="['/admin']" routerLinkActive="active-route">Admin</button>
+
+    <button mat-button [routerLink]="['/login']" routerLinkActive="active-route">Log{{(auth.user$ | async) ? "out" : "in"}}</button>
+
+    <ng-container *ngIf="(auth.user$ | async) as user">
+      <img [src]="user.photoURL" id="profile-thumbnail">
+    </ng-container>
+
 
   </div>
 

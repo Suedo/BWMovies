@@ -5,11 +5,14 @@ import { MovieShellComponent } from './movies/movie-shell.component';
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { AdminShellComponent } from './admin/admin-shell.component';
+import { AuthGuard } from './auth/auth.guard';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
 
   { path: 'movies', component: MovieShellComponent },
-  { path: 'admin', component: AdminShellComponent },
+  { path: 'admin', component: AdminShellComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
   { path: '', pathMatch: 'full', redirectTo: 'movies' }
 
 ];
